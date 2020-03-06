@@ -1,10 +1,15 @@
 class Api::ProductsController < ApplicationController
-  def query_all_products
-    # id = params[:id].to_i
-
-    @product = Product.find_by(id: 1)
+  def index
+    @products = Product.all
+    render 'index.json.jb'
+  end
+  
+  
+  
+  def show
+    the_id = params[:id]
+    @product = Product.find_by(id: the_id)
     p @product
-     
-    render 'query_all_products.json.jb'
+    render 'show.json.jb'
   end
 end

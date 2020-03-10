@@ -8,7 +8,7 @@
 
 100.times do
   product_name = Faker::Beer.name
-  product_url = Faker::Internet.domain_name
+  product_url = Faker::Avatar.image
   product_description = Faker::Beer.style
 
   product = Product.new(name: product_name, price: rand(1.5..10), image_url: product_url, description: product_description)
